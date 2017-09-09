@@ -1,0 +1,20 @@
+#!/bin/bash
+
+for x in *;
+do
+	if [ -d "${x}" ]
+	then
+		cd "${x}"/
+		echo "${x}"
+		for y in *;
+		do
+			if [ -d "${y}" ]
+			then
+				cd "${y}"/
+				rm -v *.db
+				cd ../
+			fi
+		done
+		cd ../
+	fi
+done

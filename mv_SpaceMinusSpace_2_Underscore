@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo
+echo "Renaming * - * to _"
+echo
+
+for x in *\ \-\ *;
+do
+	mv -v "${x}" "${x/\ \-\ /_}"
+done

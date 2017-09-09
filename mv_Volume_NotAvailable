@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo
+echo "Renaming [Volume Not Available] to nothing..."
+echo
+
+for x in \[Volume\ Not\ Available*;
+do
+	mv -v "${x}" "${x/\[Volume\ Not\ Available\]\ \-\ /}"
+done

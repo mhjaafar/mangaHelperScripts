@@ -1,0 +1,26 @@
+#!/bin/bash
+
+userChoice=0
+
+while (true); do
+	read -p "Target number: " userChoice
+
+	# invalid input
+	if ! [ "$userChoice" -eq "$userChoice" ] 2> /dev/null ; then
+	      echo "Sorry, integers only!"
+	      continue
+	else
+		echo "You have picked: $userChoice"
+		break;
+	fi
+done
+
+echo
+echo "Renaming [Volume $userChoice] to $userChoice_***"
+echo
+
+
+for x in \[Volume\ $userChoice*;
+do
+	mv -v "${x}" "${x/\[Volume\ "$userChoice"\]\ \-\ /"$userChoice"_}"
+done

@@ -16,11 +16,12 @@ while (true); do
 done
 
 echo
-echo "Renaming [Volume $userChoice] to $userChoice_***"
+echo "Renaming Vol $userChoice to $userChoice_***"
 echo
 
 
-for x in \[Volume\ $userChoice*;
+#for x in \[Volume\ $userChoice*;
+for x in Vol\ $userChoice*;
 do
-	mv -v "${x}" "${x/\[Volume\ "$userChoice"\]\ \-\ /"$userChoice"_}"
+    mv -v "${x}" "${x/Vol\ "$userChoice"\ Ch\ /"$userChoice"_}"
 done

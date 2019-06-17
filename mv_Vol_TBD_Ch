@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo
+echo "Renaming [Volume TBD] to nothing..."
+echo
+
+for x in Vol\.TBD\ Ch\.*;
+do
+	mv -v "${x}" "${x/Vol\.TBD\ Ch\./}"
+done
